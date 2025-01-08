@@ -1,0 +1,550 @@
+﻿{
+    "info":  {
+                 "title":  "Dummy-ASP.NET-API",
+                 "description":  "Converted from https://localhost:44347/help",
+                 "version":  "1.0.0"
+             },
+    "servers":  [
+                    {
+                        "url":  "https://localhost:44347"
+                    }
+                ],
+    "security":  [
+                     {
+                         "bearerAuth":  [
+
+                                        ]
+                     }
+                 ],
+    "openapi":  "3.0.0",
+    "tags":  [
+                 {
+                     "name":  "Introduction",
+                     "description":  "Test target for API-Help-To-OpenAPI.ps1"
+                 },
+                 {
+                     "name":  "Account"
+                 },
+                 {
+                     "name":  "Values"
+                 }
+             ],
+    "components":  {
+                       "securitySchemes":  {
+                                               "bearerAuth":  {
+                                                                  "scheme":  "bearer",
+                                                                  "type":  "http"
+                                                              }
+                                           }
+                   },
+    "paths":  {
+                  "/api/Account/Register":  {
+                                                "post":  {
+                                                             "parameters":  [
+                                                                                {
+                                                                                    "name":  "Email",
+                                                                                    "in":  "query",
+                                                                                    "schema":  {
+                                                                                                   "type":  "string"
+                                                                                               },
+                                                                                    "required":  true
+                                                                                },
+                                                                                {
+                                                                                    "name":  "ConfirmPassword",
+                                                                                    "in":  "query",
+                                                                                    "schema":  {
+                                                                                                   "type":  "string"
+                                                                                               },
+                                                                                    "required":  false
+                                                                                },
+                                                                                {
+                                                                                    "name":  "Password",
+                                                                                    "in":  "query",
+                                                                                    "schema":  {
+                                                                                                   "type":  "string"
+                                                                                               },
+                                                                                    "required":  true
+                                                                                }
+                                                                            ],
+                                                             "summary":  "Registers a new user.",
+                                                             "responses":  {
+                                                                               "200":  {
+                                                                                           "description":  "An IHttpActionResult indicating the result of the register operation."
+                                                                                       }
+                                                                           },
+                                                             "requestBody":  {
+                                                                                 "content":  {
+                                                                                                 "application/json":  {
+                                                                                                                          "schema":  {
+                                                                                                                                         "properties":  {
+                                                                                                                                                            "Email":  {
+                                                                                                                                                                          "type":  "string"
+                                                                                                                                                                      },
+                                                                                                                                                            "ConfirmPassword":  {
+                                                                                                                                                                                    "type":  "string"
+                                                                                                                                                                                },
+                                                                                                                                                            "Password":  {
+                                                                                                                                                                             "type":  "string"
+                                                                                                                                                                         }
+                                                                                                                                                        },
+                                                                                                                                         "type":  "object"
+                                                                                                                                     }
+                                                                                                                      }
+                                                                                             },
+                                                                                 "description":  "None."
+                                                                             },
+                                                             "tags":  [
+                                                                          "Account"
+                                                                      ]
+                                                         }
+                                            },
+                  "/api/Account/RegisterExternal":  {
+                                                        "post":  {
+                                                                     "parameters":  [
+                                                                                        {
+                                                                                            "name":  "Email",
+                                                                                            "in":  "query",
+                                                                                            "schema":  {
+                                                                                                           "type":  "string"
+                                                                                                       },
+                                                                                            "required":  true
+                                                                                        }
+                                                                                    ],
+                                                                     "summary":  "Registers a new external user.",
+                                                                     "responses":  {
+                                                                                       "200":  {
+                                                                                                   "description":  "An IHttpActionResult indicating the result of the register external operation."
+                                                                                               }
+                                                                                   },
+                                                                     "requestBody":  {
+                                                                                         "content":  {
+                                                                                                         "application/json":  {
+                                                                                                                                  "schema":  {
+                                                                                                                                                 "properties":  {
+                                                                                                                                                                    "Email":  {
+                                                                                                                                                                                  "type":  "string"
+                                                                                                                                                                              }
+                                                                                                                                                                },
+                                                                                                                                                 "type":  "object"
+                                                                                                                                             }
+                                                                                                                              }
+                                                                                                     },
+                                                                                         "description":  "None."
+                                                                                     },
+                                                                     "tags":  [
+                                                                                  "Account"
+                                                                              ]
+                                                                 }
+                                                    },
+                  "/api/Account/SetPassword":  {
+                                                   "post":  {
+                                                                "parameters":  [
+                                                                                   {
+                                                                                       "name":  "NewPassword",
+                                                                                       "in":  "query",
+                                                                                       "schema":  {
+                                                                                                      "type":  "string"
+                                                                                                  },
+                                                                                       "required":  true
+                                                                                   },
+                                                                                   {
+                                                                                       "name":  "ConfirmPassword",
+                                                                                       "in":  "query",
+                                                                                       "schema":  {
+                                                                                                      "type":  "string"
+                                                                                                  },
+                                                                                       "required":  false
+                                                                                   }
+                                                                               ],
+                                                                "summary":  "Sets a new password for the current user.",
+                                                                "responses":  {
+                                                                                  "200":  {
+                                                                                              "description":  "An IHttpActionResult indicating the result of the set password operation."
+                                                                                          }
+                                                                              },
+                                                                "requestBody":  {
+                                                                                    "content":  {
+                                                                                                    "application/json":  {
+                                                                                                                             "schema":  {
+                                                                                                                                            "properties":  {
+                                                                                                                                                               "ConfirmPassword":  {
+                                                                                                                                                                                       "type":  "string"
+                                                                                                                                                                                   },
+                                                                                                                                                               "NewPassword":  {
+                                                                                                                                                                                   "type":  "string"
+                                                                                                                                                                               }
+                                                                                                                                                           },
+                                                                                                                                            "type":  "object"
+                                                                                                                                        }
+                                                                                                                         }
+                                                                                                },
+                                                                                    "description":  "None."
+                                                                                },
+                                                                "tags":  [
+                                                                             "Account"
+                                                                         ]
+                                                            }
+                                               },
+                  "/api/Account/ExternalLogin":  {
+                                                     "get":  {
+                                                                 "summary":  "Gets an external login.",
+                                                                 "tags":  [
+                                                                              "Account"
+                                                                          ],
+                                                                 "parameters":  [
+
+                                                                                ],
+                                                                 "responses":  {
+                                                                                   "200":  {
+                                                                                               "description":  "An IHttpActionResult indicating the result of the get external login operation."
+                                                                                           }
+                                                                               }
+                                                             }
+                                                 },
+                  "/api/Account/UserInfo":  {
+                                                "get":  {
+                                                            "summary":  "Gets user information.",
+                                                            "tags":  [
+                                                                         "Account"
+                                                                     ],
+                                                            "parameters":  [
+
+                                                                           ],
+                                                            "responses":  {
+                                                                              "200":  {
+                                                                                          "description":  "A UserInfoViewModel containing user information."
+                                                                                      }
+                                                                          }
+                                                        }
+                                            },
+                  "/api/Account/ExternalLogins":  {
+                                                      "get":  {
+                                                                  "summary":  "Gets external logins.",
+                                                                  "tags":  [
+                                                                               "Account"
+                                                                           ],
+                                                                  "parameters":  [
+
+                                                                                 ],
+                                                                  "responses":  {
+                                                                                    "200":  {
+                                                                                                "description":  "An IEnumerable of ExternalLoginViewModel containing external logins."
+                                                                                            }
+                                                                                }
+                                                              }
+                                                  },
+                  "/api/Values":  {
+                                      "post":  {
+                                                   "parameters":  [
+
+                                                                  ],
+                                                   "summary":  "Posts a new value.",
+                                                   "responses":  {
+                                                                     "200":  {
+                                                                                 "description":  "Successful response"
+                                                                             }
+                                                                 },
+                                                   "requestBody":  {
+                                                                       "content":  {
+                                                                                       "application/json":  {
+                                                                                                                "schema":  {
+                                                                                                                               "properties":  {
+
+                                                                                                                                              },
+                                                                                                                               "type":  "object"
+                                                                                                                           }
+                                                                                                            }
+                                                                                   },
+                                                                       "description":  "None."
+                                                                   },
+                                                   "tags":  [
+                                                                "Values"
+                                                            ]
+                                               },
+                                      "get":  {
+                                                  "summary":  "Gets a list of values.",
+                                                  "tags":  [
+                                                               "Values"
+                                                           ],
+                                                  "parameters":  [
+
+                                                                 ],
+                                                  "responses":  {
+                                                                    "200":  {
+                                                                                "description":  "An IEnumerable of strings."
+                                                                            }
+                                                                }
+                                              }
+                                  },
+                  "/api/Account/ChangePassword":  {
+                                                      "post":  {
+                                                                   "parameters":  [
+                                                                                      {
+                                                                                          "name":  "NewPassword",
+                                                                                          "in":  "query",
+                                                                                          "schema":  {
+                                                                                                         "type":  "string"
+                                                                                                     },
+                                                                                          "required":  true
+                                                                                      },
+                                                                                      {
+                                                                                          "name":  "OldPassword",
+                                                                                          "in":  "query",
+                                                                                          "schema":  {
+                                                                                                         "type":  "string"
+                                                                                                     },
+                                                                                          "required":  true
+                                                                                      },
+                                                                                      {
+                                                                                          "name":  "ConfirmPassword",
+                                                                                          "in":  "query",
+                                                                                          "schema":  {
+                                                                                                         "type":  "string"
+                                                                                                     },
+                                                                                          "required":  false
+                                                                                      }
+                                                                                  ],
+                                                                   "summary":  "Changes the password for the current user.",
+                                                                   "responses":  {
+                                                                                     "200":  {
+                                                                                                 "description":  "An IHttpActionResult indicating the result of the change password operation."
+                                                                                             }
+                                                                                 },
+                                                                   "requestBody":  {
+                                                                                       "content":  {
+                                                                                                       "application/json":  {
+                                                                                                                                "schema":  {
+                                                                                                                                               "properties":  {
+                                                                                                                                                                  "NewPassword":  {
+                                                                                                                                                                                      "type":  "string"
+                                                                                                                                                                                  },
+                                                                                                                                                                  "ConfirmPassword":  {
+                                                                                                                                                                                          "type":  "string"
+                                                                                                                                                                                      },
+                                                                                                                                                                  "OldPassword":  {
+                                                                                                                                                                                      "type":  "string"
+                                                                                                                                                                                  }
+                                                                                                                                                              },
+                                                                                                                                               "type":  "object"
+                                                                                                                                           }
+                                                                                                                            }
+                                                                                                   },
+                                                                                       "description":  "None."
+                                                                                   },
+                                                                   "tags":  [
+                                                                                "Account"
+                                                                            ]
+                                                               }
+                                                  },
+                  "/api/Account/AddExternalLogin":  {
+                                                        "post":  {
+                                                                     "parameters":  [
+                                                                                        {
+                                                                                            "name":  "ExternalAccessToken",
+                                                                                            "in":  "query",
+                                                                                            "schema":  {
+                                                                                                           "type":  "string"
+                                                                                                       },
+                                                                                            "required":  true
+                                                                                        }
+                                                                                    ],
+                                                                     "summary":  "Adds an external login for the current user.",
+                                                                     "responses":  {
+                                                                                       "200":  {
+                                                                                                   "description":  "An IHttpActionResult indicating the result of the add external login operation."
+                                                                                               }
+                                                                                   },
+                                                                     "requestBody":  {
+                                                                                         "content":  {
+                                                                                                         "application/json":  {
+                                                                                                                                  "schema":  {
+                                                                                                                                                 "properties":  {
+                                                                                                                                                                    "ExternalAccessToken":  {
+                                                                                                                                                                                                "type":  "string"
+                                                                                                                                                                                            }
+                                                                                                                                                                },
+                                                                                                                                                 "type":  "object"
+                                                                                                                                             }
+                                                                                                                              }
+                                                                                                     },
+                                                                                         "description":  "None."
+                                                                                     },
+                                                                     "tags":  [
+                                                                                  "Account"
+                                                                              ]
+                                                                 }
+                                                    },
+                  "/api/Values/{id}":  {
+                                           "get":  {
+                                                       "summary":  "Gets a specific value by ID.",
+                                                       "tags":  [
+                                                                    "Values"
+                                                                ],
+                                                       "parameters":  [
+                                                                          {
+                                                                              "name":  "id",
+                                                                              "in":  "path",
+                                                                              "schema":  {
+                                                                                             "type":  "string"
+                                                                                         },
+                                                                              "required":  true
+                                                                          }
+                                                                      ],
+                                                       "responses":  {
+                                                                         "200":  {
+                                                                                     "description":  "A string representing the value."
+                                                                                 }
+                                                                     }
+                                                   },
+                                           "put":  {
+                                                       "parameters":  [
+                                                                          {
+                                                                              "name":  "id",
+                                                                              "in":  "path",
+                                                                              "schema":  {
+                                                                                             "type":  "string"
+                                                                                         },
+                                                                              "required":  true
+                                                                          }
+                                                                      ],
+                                                       "summary":  "Updates an existing value by ID.",
+                                                       "responses":  {
+                                                                         "200":  {
+                                                                                     "description":  "Successful response"
+                                                                                 }
+                                                                     },
+                                                       "requestBody":  {
+                                                                           "content":  {
+                                                                                           "application/json":  {
+                                                                                                                    "schema":  {
+                                                                                                                                   "properties":  {
+
+                                                                                                                                                  },
+                                                                                                                                   "type":  "object"
+                                                                                                                               }
+                                                                                                                }
+                                                                                       },
+                                                                           "description":  "The new value."
+                                                                       },
+                                                       "tags":  [
+                                                                    "Values"
+                                                                ]
+                                                   },
+                                           "delete":  {
+                                                          "summary":  "Deletes a value by ID.",
+                                                          "tags":  [
+                                                                       "Values"
+                                                                   ],
+                                                          "parameters":  [
+                                                                             {
+                                                                                 "name":  "id",
+                                                                                 "in":  "path",
+                                                                                 "schema":  {
+                                                                                                "type":  "string"
+                                                                                            },
+                                                                                 "required":  true
+                                                                             }
+                                                                         ],
+                                                          "responses":  {
+                                                                            "200":  {
+                                                                                        "description":  "Successful response"
+                                                                                    }
+                                                                        }
+                                                      }
+                                       },
+                  "/api/Account/RemoveLogin":  {
+                                                   "post":  {
+                                                                "parameters":  [
+                                                                                   {
+                                                                                       "name":  "ProviderKey",
+                                                                                       "in":  "query",
+                                                                                       "schema":  {
+                                                                                                      "type":  "string"
+                                                                                                  },
+                                                                                       "required":  true
+                                                                                   },
+                                                                                   {
+                                                                                       "name":  "LoginProvider",
+                                                                                       "in":  "query",
+                                                                                       "schema":  {
+                                                                                                      "type":  "string"
+                                                                                                  },
+                                                                                       "required":  true
+                                                                                   }
+                                                                               ],
+                                                                "summary":  "Removes a login for the current user.",
+                                                                "responses":  {
+                                                                                  "200":  {
+                                                                                              "description":  "An IHttpActionResult indicating the result of the remove login operation."
+                                                                                          }
+                                                                              },
+                                                                "requestBody":  {
+                                                                                    "content":  {
+                                                                                                    "application/json":  {
+                                                                                                                             "schema":  {
+                                                                                                                                            "properties":  {
+                                                                                                                                                               "ProviderKey":  {
+                                                                                                                                                                                   "type":  "string"
+                                                                                                                                                                               },
+                                                                                                                                                               "LoginProvider":  {
+                                                                                                                                                                                     "type":  "string"
+                                                                                                                                                                                 }
+                                                                                                                                                           },
+                                                                                                                                            "type":  "object"
+                                                                                                                                        }
+                                                                                                                         }
+                                                                                                },
+                                                                                    "description":  "None."
+                                                                                },
+                                                                "tags":  [
+                                                                             "Account"
+                                                                         ]
+                                                            }
+                                               },
+                  "/api/Account/ManageInfo":  {
+                                                  "get":  {
+                                                              "summary":  "Gets management information for the current user.",
+                                                              "tags":  [
+                                                                           "Account"
+                                                                       ],
+                                                              "parameters":  [
+
+                                                                             ],
+                                                              "responses":  {
+                                                                                "200":  {
+                                                                                            "description":  "A ManageInfoViewModel containing management information."
+                                                                                        }
+                                                                            }
+                                                          }
+                                              },
+                  "/api/Account/Logout":  {
+                                              "post":  {
+                                                           "parameters":  [
+
+                                                                          ],
+                                                           "summary":  "Logs out the current user.",
+                                                           "responses":  {
+                                                                             "200":  {
+                                                                                         "description":  "An IHttpActionResult indicating the result of the logout operation."
+                                                                                     }
+                                                                         },
+                                                           "requestBody":  {
+                                                                               "content":  {
+                                                                                               "application/json":  {
+                                                                                                                        "schema":  {
+                                                                                                                                       "properties":  {
+
+                                                                                                                                                      },
+                                                                                                                                       "type":  "object"
+                                                                                                                                   }
+                                                                                                                    }
+                                                                                           },
+                                                                               "description":  "None."
+                                                                           },
+                                                           "tags":  [
+                                                                        "Account"
+                                                                    ]
+                                                       }
+                                          }
+              }
+}
